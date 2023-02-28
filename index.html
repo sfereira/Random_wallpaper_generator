@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Wallpaper Prompt Generator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Random Wallpaper Prompt Generator</h1>
+    <form>
+      <input type="submit" value="Generate Prompt">
+    </form>
+    <div id="prompt"></div>
+    <div id="image-container">
+      <img id="image">
+      <a href="" id="download-link" download>Download Wallpaper</a>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $('form').submit(function(event) {
+          event.preventDefault();
+          $('input[type="submit"]').prop('disabled', true); // disable the button
+          $.getJSON('{{ url_for("generate_prompt") }}', function(data) {
+            $('#prompt').text(data.prompt);
+            $('#image').attr('src', data.image_url);
+            $('#download-link').attr('href', data.image_url); // set the download link
+            $('input[type="submit"]').prop('disabled', false); // re-enable the button
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
