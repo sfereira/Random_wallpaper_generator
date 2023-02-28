@@ -26,9 +26,7 @@ Prerequisites:<br>
 4. To generate a new image, click on the "Generate Image" button again.
 
 ## Credits
-This application is built using Flask, HTML, CSS, and JavaScript.
-The prompts for generating images are generated using the ChatGPT API from OpenAI.
-The images are generated using DALLE from OpenAI.
-The application is inspired by the DALL-E 2 API Playground.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+* This application is built using Flask, HTML, CSS, and JavaScript.
+* The prompts for generating images are generated using the ChatGPT API from OpenAI.
+* The images are generated using DALLE from OpenAI.
+* The application is inspired by the DALL-E 2 API Playground.
